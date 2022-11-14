@@ -18,5 +18,5 @@ for (var i = 0; i < 10; i++){
 }
 console.log(pass);
 
-document.getElementById("demo").innerHTML = "<h1>Pasword</h1> <div>"+pass+"</div>";
+document.getElementById("demo").innerHTML = "<h1>Pasword <div>"+pass+"</div> </h1>";
 
