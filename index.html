@@ -7,20 +7,43 @@
     <meta name="theme-color">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" />
     <link rel="manifest" href="/manifest.json">
-    <title>My Sample PWA</title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Bogdoing PWA</title>
 </head>
 
 <body>
-    <h1>My Sample PWA</h1>
+    <header>
+        <p>Generate pasword</p>
+    </header>
 
-    <div>
-        <h1>0.0.1
-            <br /><br />
-            <div id="demo"></div>
+    <section class="pas">
+        <h1>
+            <div>Pasword</div>
+            <div id="pas"></div>
         </h1>
-    </div>
-    <script src="src/component/pas.js"></script>
+
+    </section>
+    <button onclick="pass()">Generate</button>
+
+    <section id="log">
+        <span class="logicon">+</span>
+        <p class="logname">log</p>
+        <p class="logtable"></p>
+    </section>
+
+
+    <footer class="version">
+        <p>version 0.0.2</p>
+        <p>GitHub : <a href="https://github.com/Bogdoing">Bogdoing </a></p>
+    </footer>
 
 </body>
+<script src="script/pas.js"></script>
+<script src="script/logpas.js"></script>
 
 </html>
