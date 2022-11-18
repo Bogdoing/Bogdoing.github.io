@@ -59,3 +59,12 @@ footer{
     padding: 20px;
     text-align: center;
 }
+
+@media only screen and (max-width: 400px)  {
+    header p{
+        font-size: 28px;
+    }
+    section.pas{
+        font-size: 14px;
+    }
+  }

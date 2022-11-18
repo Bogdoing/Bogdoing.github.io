@@ -17,7 +17,7 @@ function pass() {
     }
     console.log(pass);
 
-    document.getElementById("pas").innerHTML = pass;
+    document.getElementById("pas").innerHTML = ' ' + pass;
 }
 
 pass();
