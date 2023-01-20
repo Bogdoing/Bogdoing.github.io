@@ -11,13 +11,13 @@ body{
 }
 
 header{
-    width: 80%;
+    width: 100%;
     text-align: center;
     margin: 50px 0px ;
 }
 
 header p{
-    width: 100%; /*SET your width here*/ /*width: 350px;*/
+    width: 80%; /*SET your width here*/ /*width: 350px;*/
     margin: 0 auto;
     text-align: center; /*left*/
     font-size: 36px;
