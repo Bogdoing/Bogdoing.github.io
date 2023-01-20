@@ -11,15 +11,15 @@ body{
 }
 
 header{
-    width: 100%;
+    width: 80%;
     text-align: center;
     margin: 50px 0px ;
 }
 
 header p{
-    width: 350px; /*SET your width here*/
+    width: 100%; /*SET your width here*/ /*width: 350px;*/
     margin: 0 auto;
-    text-align: left;
+    text-align: center; /*left*/
     font-size: 36px;
     font-weight: 200;
 }
