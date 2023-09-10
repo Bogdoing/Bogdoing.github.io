@@ -30,3 +30,10 @@ self.addEventListener('fetch', event => {
     }
   })());
 });
+
+// window.addEventListener('beforeinstallprompt', (event) => {
+//   // Предотвращаем отображение стандартного диалогового окна браузера
+//   event.preventDefault();
+//   // Отображаем свой диалоговое окно для установки приложения
+//   // ...
+// });

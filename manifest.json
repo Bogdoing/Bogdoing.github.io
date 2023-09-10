@@ -11,11 +11,11 @@
     "display": "standalone",
     "icons": [
         {
-            "src": "/icon512.png",
+            "src": "./icon512.png",
             "sizes": "512x512"
         },
         {
-            "src": "/icon192.png",
+            "src": "./icon192.png",
             "sizes": "192x192"
         }
     ]

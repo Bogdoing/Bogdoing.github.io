@@ -10,16 +10,11 @@
 </head>
 
 <body>
-
     <div id="counter">
         Счётчик: {{ counter }}
     </div>
-
-
 </body>
-
 <script>
-
     const Counter = {
         data() {
             return {
@@ -32,9 +27,7 @@
             }, 1000)
         }
     }
-
     Vue.createApp(Counter).mount('#counter')
-
 </script>
 
 </html>

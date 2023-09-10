@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papoi</title>
+    <style>
+        *{
+            background: #efefefad;
+        }
+        div{
+            background: #efefefad;
+        }
+    </style>
+</head>
+<body>
+    <div class="start-date">19.5.2023</div>
+    <div class="dead-date">30.6.2023</div>
+    <hr>
+    <div class="current-day"></div>
+    <hr>
+    <div class="day-com"></div>
+    <div class="day-ded"></div>
+    
+</body>
+
+<script>
+    const date_com = new Date('2023-05-19');
+    const date_ded = new Date('2023-06-30');
+    const date_curr = new Date();
+    
+    const diffTime = Math.abs(date_curr - date_com);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+    const diffTimeD = Math.abs(date_curr - date_ded);
+    const diffDaysD = Math.ceil(diffTimeD / (1000 * 60 * 60 * 24)); 
+
+    console.log(diffDays);
+    console.log(diffDaysD);
+
+    const curDay = date_curr.getDate() 
+    const curMounth = date_curr.getMonth() + 1 
+    const curYear = date_curr.getFullYear()
+    
+    document.querySelector('.current-day').innerHTML = curDay + '.' + curMounth + '.' + curYear;
+    document.querySelector('.day-com').innerHTML = 'd-c | ' + diffDays
+    document.querySelector('.day-ded').innerHTML = 'd-d | ' + diffDaysD
+
+</script>
+</html>
