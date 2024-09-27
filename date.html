@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./script/untilDate.js" defer></script> <!-- Подключаем JavaScript файл -->
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="lib/nes.css.css">
+
+    <link rel="stylesheet" href="style/header.css">
+    <script src="./script/header.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Bogdoing<span>.</span>ru</a>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <ul class="navigation">
+            <li><a href="index.html">Дом</a></li>
+            <li><a href="date.html">В начало</a></li>
+            <li><a href="Papoi.html">papoi</a></li>
+        </ul>
+    </header>
+    <div style="margin-top: 100px;"></div>
+
+    <h1>Время до целевой даты</h1>
+    <button id="checkTimeButton">Проверить время до Нового года</button>
+
+    <script>
+        // Добавляем обработчик события для кнопки
+        document.getElementById('checkTimeButton').addEventListener('click', function () {
+            const targetDate = '2024-01-01T00:00:00'; // Задайте целевую дату
+            displayTimeUntil(targetDate); // Вызываем функцию для отображения времени до целевой даты
+        });
+    </script>
+</body>
+
+
+</html>

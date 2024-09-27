@@ -7,47 +7,68 @@
     <meta name="theme-color">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" />
     <link rel="manifest" href="./manifest.json">
-    <link rel="stylesheet" href="style/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="lib/nes.css.css">
+
+    <link rel="stylesheet" href="style/header.css">
+    <script src="./script/header.js" defer></script>
 
     <title>Bogdoing PWA</title>
 </head>
 
 <body>
+
     <header>
-        <a href="vue/vue.html">
-            <p>Generate pasword</p>
-        </a>
-        <a href="./Papoi.html">
-            <p>Papoi</p>
-        </a>
+        <a href="index.html" class="logo">Bogdoing<span>.</span>ru</a>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <ul class="navigation">
+            <li><a href="index.html">Дом</a></li>
+            <li><a href="date.html">В начало</a></li>
+            <li><a href="Papoi.html">papoi</a></li>
+        </ul>
     </header>
+    <div style="margin-top: 100px;"></div>
 
-    <section class="pas">
-        <h1>
-            <div>Pas :</div>
-            <div id="pas"> </div>
-        </h1>
+    <div class="nes-container with-title is-centered">
+        <p class="title">Container.is-centered</p>
+        <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+    </div>
 
-    </section>
-    <button onclick="pass()">Generate</button>
+    <div class="nes-container with-title is-centered">
+        <p class="title">Container.is-centered</p>
+        <section>
+            <button type="button" class="nes-btn is-primary"
+                onclick="document.getElementById('dialog-default').showModal();">
+                Open dialog
+            </button>
+            <dialog class="nes-dialog" id="dialog-default">
+                <form method="dialog">
+                    <p class="title">Dialog</p>
+                    <p>Alert: this is a dialog.</p>
+                    <menu class="dialog-menu">
+                        <button class="nes-btn">Cancel</button>
+                        <button class="nes-btn is-primary">Confirm</button>
+                    </menu>
+                </form>
+            </dialog>
+        </section>
+    </div>
 
-    <section id="log">
-        <span class="logicon">+</span>
-        <p class="logname">log</p>
-        <p class="logtable"></p>
-    </section>
 
 
-    <footer class="version">
-        <p>version 0.0.2</p>
-        <p>GitHub : <a href="https://github.com/Bogdoing">Bogdoing </a></p>
-    </footer>
+    <!-- <section class="icon-list">
+    <i class="nes-mario"></i>
+    <i class="nes-ash"></i>
+    <i class="nes-pokeball"></i>
+    <i class="nes-bulbasaur"></i>
+    <i class="nes-charmander"></i>
+    <i class="nes-squirtle"></i>
+    <i class="nes-kirby"></i>
+    </section> -->
+
+
 
 </body>
-<script src="script/pas.js"></script>
 
 </html>
