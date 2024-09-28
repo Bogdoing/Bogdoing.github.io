@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="style/header.css">
     <script src="./script/header.js" defer></script>
 
+    <link rel="stylesheet" href="style/footer.css">
+
     <style>
         /* * {
             background: #efefefad;
@@ -26,7 +28,12 @@
 <body>
     <header>
         <a href="index.html" class="logo">Bogdoing<span>.</span>ru</a>
-        <div class="menuToggle" onclick="toggleMenu();"></div>
+
+        <div class="nav-menu">
+            <div class="manu-btn">
+                <i class="nes-icon close is-medium" onclick="toggleMenu();"></i>
+            </div>
+        </div>
         <ul class="navigation">
             <li><a href="index.html">Дом</a></li>
             <li><a href="date.html">В начало</a></li>
@@ -45,7 +52,7 @@
 
     <div style="margin: 10px;"></div>
 
-    <div class="nes-table-responsive">
+    <!-- <div class="nes-table-responsive">
         <table class="nes-table is-bordered is-centered">
             <thead>
                 <tr>
@@ -65,13 +72,24 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
 
-    <section class="icon-list">
+    <!-- <section class="icon-list">
         <i class="nes-bulbasaur"></i>
         <i class="nes-charmander"></i>
         <i class="nes-squirtle"></i>
+    </section> -->
+
+    <section class="message -right" style="position: fixed; bottom: 140px; right: 85px;">
+        <div class="nes-balloon from-right">
+            <p>Hi</p>
+        </div>
     </section>
+    <i class="nes-charmander" style="position: fixed; bottom: 45px; right: 10px;">
+    </i>
+    <footer>
+        <p>©2024 - ∞ Bogdoing</p>
+    </footer>
 
 </body>
 

@@ -3,8 +3,9 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    width: 90%;
-    padding: 40px 100px;
+    width: 100%;
+    /* padding: 40px 100px; */
+    padding: 20px 0px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,9 +37,16 @@ header ul li a:hover{
 .sticky a:hover{
     color: #ff0157;
 }
-header ul{
+
+header .nav-menu{
     position: relative;
     display: flex;
+    margin-left: 30px;
+}
+
+header ul{
+    position: relative;
+    display: none;
 }
 header ul li{
     list-style: none;
@@ -47,23 +55,39 @@ header ul li{
 header ul li a{
     text-decoration: none;
     color: #000;
-    font-weight: 300
+    font-weight: 300;
+    font-size: 1.6em;
 }
 /*/HEADER/*/
+
+header .navigation.active{
+    width: 100%;
+    height: calc(100% - 68px);
+    position: fixed;
+    top: 68px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.45); 
+    backdrop-filter: blur(3px); /* This be the blur */
+    /*background: #fff;*/
+}
 
 @media (max-width: 991px){
     header{
 
     }
     header, header.sticky{
-        padding: 10px 20px;        
+        padding: 10px 0px;        
     }
     header ul{
         display: none;
     }
     /**/
-    header .navigation.active{
-        width: 90%;
+    /* header .navigation.active{
+        width: 100%;
         height: calc(100% - 68px);
         position: fixed;
         top: 68px;
@@ -73,9 +97,8 @@ header ul li a{
         align-items: center;
         flex-direction: column;
         background: rgba(255, 255, 255, 0.45); 
-        backdrop-filter: blur(8px); /* This be the blur */
-        /*background: #fff;*/
-    }
+        backdrop-filter: blur(8px); 
+    } */
     header .navigation li{
         margin-left: 0;
     }

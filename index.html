@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="style/header.css">
     <script src="./script/header.js" defer></script>
 
+    <link rel="stylesheet" href="style/links.css">
+    <link rel="stylesheet" href="style/footer.css">
+
     <title>Bogdoing PWA</title>
 </head>
 
@@ -21,7 +24,12 @@
 
     <header>
         <a href="index.html" class="logo">Bogdoing<span>.</span>ru</a>
-        <div class="menuToggle" onclick="toggleMenu();"></div>
+
+        <div class="nav-menu">
+            <div class="manu-btn">
+                <i class="nes-icon close is-medium" onclick="toggleMenu();"></i>
+            </div>
+        </div>
         <ul class="navigation">
             <li><a href="index.html">Дом</a></li>
             <li><a href="date.html">В начало</a></li>
@@ -31,42 +39,60 @@
     <div style="margin-top: 100px;"></div>
 
     <div class="nes-container with-title is-centered">
-        <p class="title">Container.is-centered</p>
+        <p class="title">Hello</p>
         <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
     </div>
 
-    <div class="nes-container with-title is-centered">
-        <p class="title">Container.is-centered</p>
-        <section>
-            <button type="button" class="nes-btn is-primary"
-                onclick="document.getElementById('dialog-default').showModal();">
-                Open dialog
-            </button>
-            <dialog class="nes-dialog" id="dialog-default">
-                <form method="dialog">
-                    <p class="title">Dialog</p>
-                    <p>Alert: this is a dialog.</p>
-                    <menu class="dialog-menu">
-                        <button class="nes-btn">Cancel</button>
-                        <button class="nes-btn is-primary">Confirm</button>
-                    </menu>
-                </form>
-            </dialog>
-        </section>
+    <div class="social-links">
+        <a href="https://github.com/Bogdoing" target="_blank">
+            <i class="nes-icon github is-medium"></i>
+            GitHub
+        </a>
+        <a href="https://x.com/Bogdoing" target="_blank">
+            <i class="nes-icon twitter is-medium"></i>
+            Twitter
+        </a>
+
+        <div class="email-field" style="margin-top: 20px;">
+            <span id="email">Bogdoingg@gmal.com</span>
+            <section>
+                <button type="button" class="nes-btn is-primary" id="copy-button"
+                    onclick="document.getElementById('dialog-default').showModal();" style="margin-top: 20px;">
+                    Copy mail
+                </button>
+                <dialog class="nes-dialog" id="dialog-default">
+                    <form method="dialog">
+                        <p class="title">Dialog</p>
+                        <p>The mail has been copied to the clipboard</p>
+                        <menu class="dialog-menu">
+                            <button class="nes-btn">Cancel</button>
+                            <button class="nes-btn is-primary">OK</button>
+                        </menu>
+                    </form>
+                </dialog>
+            </section>
+        </div>
+        <script>
+            document.getElementById('copy-button').addEventListener('click', function () {
+                const email = document.getElementById('email').innerText;
+                navigator.clipboard.writeText(email)
+            });
+        </script>
     </div>
 
 
 
-    <!-- <section class="icon-list">
-    <i class="nes-mario"></i>
-    <i class="nes-ash"></i>
-    <i class="nes-pokeball"></i>
-    <i class="nes-bulbasaur"></i>
-    <i class="nes-charmander"></i>
-    <i class="nes-squirtle"></i>
-    <i class="nes-kirby"></i>
-    </section> -->
 
+    <section class="message -right" style="position: fixed; bottom: 135px; right: 70px;">
+        <div class="nes-balloon from-right">
+            <p>Hi</p>
+        </div>
+    </section>
+    <i class="nes-kirby" style="position: fixed; bottom: 45px; right: 10px;">
+    </i>
+    <footer>
+        <p>©2024 - ∞ Bogdoing</p>
+    </footer>
 
 
 </body>

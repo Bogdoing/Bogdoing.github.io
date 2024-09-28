@@ -13,12 +13,20 @@
 
     <link rel="stylesheet" href="style/header.css">
     <script src="./script/header.js" defer></script>
+
+    <link rel="stylesheet" href="style/footer.css">
+
 </head>
 
 <body>
     <header>
         <a href="index.html" class="logo">Bogdoing<span>.</span>ru</a>
-        <div class="menuToggle" onclick="toggleMenu();"></div>
+
+        <div class="nav-menu">
+            <div class="manu-btn">
+                <i class="nes-icon close is-medium" onclick="toggleMenu();"></i>
+            </div>
+        </div>
         <ul class="navigation">
             <li><a href="index.html">Дом</a></li>
             <li><a href="date.html">В начало</a></li>
@@ -30,14 +38,25 @@
     <h1>Время до целевой даты</h1>
     <button id="checkTimeButton">Проверить время до Нового года</button>
 
-    <script>
-        // Добавляем обработчик события для кнопки
-        document.getElementById('checkTimeButton').addEventListener('click', function () {
-            const targetDate = '2024-01-01T00:00:00'; // Задайте целевую дату
-            displayTimeUntil(targetDate); // Вызываем функцию для отображения времени до целевой даты
-        });
-    </script>
+    <section class="message -right" style="position: fixed; bottom: 130px; right: 45px;">
+        <div class="nes-balloon from-right">
+            <p>Bye</p>
+        </div>
+    </section>
+    <i class="nes-ash" style="position: fixed; bottom: 45px; right: 10px;">
+    </i>
+    <footer>
+        <p>©2024 - ∞ Bogdoing</p>
+    </footer>
+
 </body>
 
+<script>
+    // Добавляем обработчик события для кнопки
+    document.getElementById('checkTimeButton').addEventListener('click', function () {
+        const targetDate = '2024-01-01T00:00:00'; // Задайте целевую дату
+        displayTimeUntil(targetDate); // Вызываем функцию для отображения времени до целевой даты
+    });
+</script>
 
 </html>
