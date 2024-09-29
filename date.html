@@ -20,7 +20,7 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo">Bogdoing<span>.</span>ru</a>
+        <a href="index.html" class="logo">Bogdoing<span></span></a>
 
         <div class="nav-menu">
             <div class="manu-btn">
@@ -29,14 +29,34 @@
         </div>
         <ul class="navigation">
             <li><a href="index.html">Дом</a></li>
-            <li><a href="date.html">В начало</a></li>
+            <li><a href="date.html">Даты</a></li>
             <li><a href="Papoi.html">papoi</a></li>
         </ul>
     </header>
     <div style="margin-top: 100px;"></div>
 
     <h1>Время до целевой даты</h1>
-    <button id="checkTimeButton">Проверить время до Нового года</button>
+    <label for="success_select">Выберите дату</label>
+    <div class="nes-select is-success">
+        <select required id="success_select">
+            <option value="" disabled selected hidden>Select...</option>
+            <option value="2025-12-31">Новый год</option>
+            <option value="2025-03-08">8 марта</option>
+            <option value="2025-02-23">23 февраля</option>
+        </select>
+    </div>
+
+    <p><br>или</p>
+
+    <div class="nes-field is-inline">
+        <label for="inline_field">Введите дату</label>
+        <input type="text" id="inline_field" class="nes-input is-success" placeholder="год-месяц-день">
+    </div>
+    <button class="nes-btn is-success" id="checkTimeButton" style="margin: 15px;">
+        Проверить время до Нового года
+    </button>
+
+    <h2 id="date-happy"></h2>
 
     <section class="message -right" style="position: fixed; bottom: 130px; right: 45px;">
         <div class="nes-balloon from-right">
@@ -45,6 +65,9 @@
     </section>
     <i class="nes-ash" style="position: fixed; bottom: 45px; right: 10px;">
     </i>
+
+    <div style="margin-bottom: 50px;"></div>
+
     <footer>
         <p>©2024 - ∞ Bogdoing</p>
     </footer>
@@ -54,8 +77,14 @@
 <script>
     // Добавляем обработчик события для кнопки
     document.getElementById('checkTimeButton').addEventListener('click', function () {
-        const targetDate = '2024-01-01T00:00:00'; // Задайте целевую дату
-        displayTimeUntil(targetDate); // Вызываем функцию для отображения времени до целевой даты
+
+        let targetDate = document.getElementById('success_select').value // Задайте целевую дату
+        console.log('date' + targetDate + '/')
+        if (targetDate == '') targetDate = document.getElementById('inline_field').value
+
+        let date = displayTimeUntil(targetDate); // Вызываем функцию для отображения времени до целевой даты
+
+        document.getElementById('date-happy').innerText = date
     });
 </script>
 

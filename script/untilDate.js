@@ -28,9 +28,20 @@ function timeUntilDate(targetDate) {
 // Функция для вызова и отображения результата
 function displayTimeUntil(targetDate) {
     const timeRemaining = timeUntilDate(targetDate);
+    console.log(timeRemaining)
     if (timeRemaining) {
-        console.log(`До целевой даты осталось ${timeRemaining.days} дней, ${timeRemaining.hours} часов, ${timeRemaining.minutes} минут и ${timeRemaining.seconds} секунд.`);
+        let date = `
+            До целевой даты осталось
+            ${timeRemaining.days} дней, 
+            ${timeRemaining.hours} часов, 
+            ${timeRemaining.minutes} минут и 
+            ${timeRemaining.seconds} секунд.
+        `
+        console.log(date);
+        return date
     } else {
-        console.log('Целевая дата уже прошла.');
+        let date = 'Целевая дата уже прошла.'
+        console.log(date);
+        return date
     }
 }
