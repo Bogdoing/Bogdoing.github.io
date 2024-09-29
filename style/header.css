@@ -22,9 +22,11 @@ header span{
     color: #ff0157;
 }
 .sticky{ /*Белое меню*/
-    background-color: #000000;
+    /* background-color: #000000; */
     /* color: #000; */
-    padding: 10px 100px;
+    backdrop-filter: blur(3px);
+    border-bottom: 3mm ridge #ff0157;
+    /* padding: 10px 100px; */
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .sticky a{
@@ -65,22 +67,19 @@ header .navigation.active{
     height: calc(100% - 68px);
     position: fixed;
     top: 68px;
-    left: 0;
+    left: -40px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.45); 
-    backdrop-filter: blur(3px); /* This be the blur */
+    backdrop-filter: blur(3px); 
     /*background: #fff;*/
 }
 
 @media (max-width: 991px){
-    header{
-
-    }
     header, header.sticky{
-        padding: 10px 0px;        
+        padding: 0px 0px;        
     }
     header ul{
         display: none;
@@ -126,7 +125,7 @@ header .navigation.active{
     }
     header.sticky .menuToggle{
         /*filter: invert(1);*/
-        backdrop-filter: blur(800px); /* This be the blur */
+        backdrop-filter: blur(800px); This be the blur
     }
 }
 

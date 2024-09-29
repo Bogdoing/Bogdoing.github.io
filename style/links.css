@@ -25,7 +25,7 @@ footer::before {
 }
 
 .social-links a {
-    margin: 0 15px; /* Отступы между ссылками */
+    margin: 0 0px; /* Отступы между ссылками */
     color: #333; /* Цвет текста ссылок */
     text-decoration: none; /* Убираем подчеркивание */
     font-weight: bold; /* Жирный шрифт */
@@ -33,4 +33,9 @@ footer::before {
 
 .social-links a:hover {
     text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+@media only screen and (max-width: 400px) {
+
 }

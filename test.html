@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репозитории GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Репозитории пользователя Bogdoing</h1>
+    <ul id="data-list"></ul>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('https://api.github.com/users/Bogdoing/repos');
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP: ${response.status}`);
+                }
+                const repos = await response.json();
+                for (const repo of repos) {
+                    const languages = await fetchLanguages(repo.languages_url);
+                    displayData(repo.name, languages);
+                }
+            } catch (error) {
+                console.error('Ошибка при получении данных:', error);
+            }
+        }
+
+        async function fetchLanguages(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Ошибка при получении языков:', error);
+                return {};
+            }
+        }
+
+        function displayData(repoName, languages) {
+            const dataList = document.getElementById('data-list');
+            const li = document.createElement('li');
+            li.textContent = `${repoName}: ${Object.keys(languages).join(', ') || 'Не указаны'}`;
+            dataList.appendChild(li);
+        }
+
+        // Вызов функции для получения данных
+        fetchData();
+    </script>
+</body>
+
+</html>
