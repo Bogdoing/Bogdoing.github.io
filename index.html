@@ -1,116 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend Developer Portfolio</title>
-  <link rel="icon" href="public/logo.svg" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/notification.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <link rel="icon" href="public/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+
+    <style>
+        .icons {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .container {
+            position: relative;
+            height: 120vh;
+        }
+
+        .center {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            z-index: 10;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .icon {
+            padding: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(3px);
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        @media screen and (min-width: 600px) {
+            .icons {
+                margin: 50px 0px 0px 0px;
+            }
+        }
+    </style>
 </head>
-<body class="light-theme">
-  <div class="gradient-bg"></div>
-  
-  <div class="container">
-    <header class="header">
-      <div class="profile-container">
-        <!-- <div class="profile-image"></div> -->
-        <div class="profile-info">
-          <h1 class="name">Вадим Богданов</h1>
-          <h2 class="title">Frontend / Fullstack Developer</h2>
-        </div>
-      </div>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-          <path fill="none" d="M0 0h24v24H0z"/>
-          <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
-        </svg>
-        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-          <path fill="none" d="M0 0h24v24H0z"/>
-          <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
-        </svg>
-      </button>
-    </header>
 
-    <section class="about-section">
-      <p class="about-text">Passionate web developer with expertise in modern JavaScript frameworks and TypeScript. Focused on creating responsive, accessible, and beautiful web experiences.</p>
-    </section>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-    <section class="contact-section">
-      <h3 class="section-title">Мои контакты</h3>
-      <div class="contact-links">
-        <a href="https://github.com/Bogdoing" class="contact-link github" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path fill="none" d="M0 0h24v24H0z"/>
-            <path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/>
-          </svg>
-          <span>GitHub</span>
-        </a>
-        <a href="https://t.me/bogdoing" class="contact-link telegram" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path fill="none" d="M0 0h24v24H0z"/>
-            <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-3.11-8.83l-2.498-.779c-.54-.165-.543-.537.121-.804l9.733-3.76c.565-.23.885.061.702.79l-1.657 7.82c-.116.557-.451.69-.916.433l-2.551-1.888-1.189 1.148c-.122.118-.221.219-.409.244-.187.026-.341-.03-.454-.34l-.87-2.871-.012.008z"/>
-          </svg>
-          <span>Telegram</span>
-        </a>
-        <a class="contact-link email">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path fill="none" d="M0 0h24v24H0z"/>
-            <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
-          </svg>
-          <span>Email - Bogdoingg@gmail.com</span>
-        </a>
-      </div>
-    </section>
-    
-    <section class="experience-section">
-      <h3 class="section-title">Work Experience</h3>
-      <div class="experience-container">
-        <div class="experience-item current">
-          <div class="experience-header">
-            <h4 class="company-name">Extent lab</h4>
-            <span class="date">2023 - 2024</span>
-          </div>
-          <p class="position">Frontend/Fullstack Developer</p>
-          <p class="description">Занимался разработкой front-end на Vue/Nuxt, back-end на node.js/python, а так же разработывался смарт контракты на solidity для сети Ethereum.</p>
+    <div id="particles-js">
+        <button class="theme-toggle">Переключить тему</button>
+        <div class="center">
+            <h1>Frontend / Fullstack Developer</h1>
+            <h2>Вадим Богданов</h2>
+            <div id="front" class="icons"></div>
+            <div id="back" class="icons"></div>
         </div>
-        <div class="experience-item">
-          <div class="experience-header">
-            <h4 class="company-name">DSR</h4>
-            <span class="date">2021 - 2022</span>
-          </div>
-          <p class="position">Стажёр C#/.NET-разработчик</p>
-          <p class="description">Проходил стажировку. В команде занимался разработкой WebApi микросервисов на C#.</p>
+        <div id="footer">
+            <div class="contact-links">
+                <a href="https://github.com/Bogdoing" class="contact-link github" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" />
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://t.me/bogdoing" class="contact-link telegram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-3.11-8.83l-2.498-.779c-.54-.165-.543-.537.121-.804l9.733-3.76c.565-.23.885.061.702.79l-1.657 7.82c-.116.557-.451.69-.916.433l-2.551-1.888-1.189 1.148c-.122.118-.221.219-.409.244-.187.026-.341-.03-.454-.34l-.87-2.871-.012.008z" />
+                    </svg>
+                    <span>Telegram</span>
+                </a>
+                <a class="contact-link email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z" />
+                    </svg>
+                    <span>Email - Bogdoingg@gmail.com</span>
+                </a>
+            </div>
         </div>
-        <div class="experience-item">
-          <div class="experience-header">
-            <h4 class="company-name">ВГТУ(ФИТКБ)</h4>
-            <span class="date">2020 - 2024</span>
-          </div>
-          <p class="position">Студент</p>
-          <p class="description">Воронежский государственный технический университет(ФАКУЛЬТЕТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ И КОМПЬЮТЕРНОЙ БЕЗОПАСНОСТИ).</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills-section">
-      <h3 class="section-title">Технические скилы</h3>
-      <div class="skills-container" id="skills-container">
-        <!-- Skills will be rendered via JavaScript -->
-      </div>
-    </section>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/skills.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/notification.js"></script>
-  <script src="js/main.js"></script>
+    </div>
 </body>
+
+<script src="getIcon.js"></script>
+<script src="particles-config.js"></script>
+<script>
+    /* auto color theme */
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (localStorage.getItem('theme') === null) {
+            if (e.matches) {
+                document.body.setAttribute('data-theme', 'dark');
+            } else {
+                document.body.removeAttribute('data-theme');
+            }
+        }
+    });
+
+    /* toggle dark mode */
+    const toggleButton = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    const currentTheme = localStorage.getItem('theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+    }
+
+    toggleButton.addEventListener('click', () => {
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script>
+
 </html>
